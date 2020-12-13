@@ -97,8 +97,3 @@ for line_instuction in list_line:
     state = advance_2(state, line_instuction)
 dist = abs(state['x']) + abs(state['y'])
 print(dist)
-
-[1 ,4]
-[4 ,-1]
-[-1,-4]
-[-4, 1]
