@@ -35,7 +35,7 @@ def merge_bus(peroid_bus_a, offset_a, peroid_bus_b, offset):
         if time_a + offset < time_b:
             time_a += peroid_bus_a
         else:
-            time_b = find_first_after(time_b + 1, peroid_bus_b)
+            time_b = find_first_after(time_a + offset, peroid_bus_b)
     return lcm(peroid_bus_a, peroid_bus_b), time_a
 
 
@@ -54,8 +54,4 @@ period_merged = list_time_bus[0]
 offset_merged = 0
 for i in range(1, len(list_time_bus)): 
     period_merged, offset_merged = merge_bus(period_merged, offset_merged, list_time_bus[i], list_time_offset[i])
-    print('merged')
-    print(period_merged)
-    print(offset_merged)
-    sys.stdout.flush()
 print(offset_merged)
