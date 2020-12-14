@@ -16,8 +16,6 @@ for offset, str_time_bus in enumerate(list_line[1].split(',')):
         list_time_bus.append(int(str_time_bus))
         list_time_offset.append(offset)
 
-
-
 def find_first_after(time_leave, time_bus):
     time_last = time_leave - (time_leave % time_bus)
     if time_last == time_leave:
@@ -38,7 +36,6 @@ def merge_bus(peroid_bus_a, offset_a, peroid_bus_b, offset):
             time_b = find_first_after(time_a + offset, peroid_bus_b)
     return lcm(peroid_bus_a, peroid_bus_b), time_a
 
-
 # part 1
 list_time_next = []
 for time_bus in list_time_bus:
@@ -46,7 +43,6 @@ for time_bus in list_time_bus:
 
 time_min = min(list_time_next)
 index_min = np.argmin(list_time_next)
-
 print((time_min - time_leave) * list_time_bus[index_min])
 
 # part 2
